@@ -1,6 +1,6 @@
 ################### Training Single Domain Learning Networks ###################
 function train_fn {
-    CUDA_VISIBLE_DEVICES=<gpu id> python train_net.py --model.dir ./saved_results/sdl --model.name=$1 --data.train $2 --data.val $2 --data.test $2 --train.batch_size=$3 --train.learning_rate=$4 --train.max_iter=$5 --train.cosine_anneal_freq=$6 --train.eval_freq=$6
+    CUDA_VISIBLE_DEVICES=0 python train_net.py --model.dir ./saved_results/sdl --model.name=$1 --data.train $2 --data.val $2 --data.test $2 --train.batch_size=$3 --train.learning_rate=$4 --train.max_iter=$5 --train.cosine_anneal_freq=$6 --train.eval_freq=$6
 }
 
 # Train an single domain learning network on every training dataset (the following models could be trained in parallel)
